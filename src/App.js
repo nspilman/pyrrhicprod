@@ -66,7 +66,7 @@ class App extends Component {
   }
 
 componentDidMount(){
-    fetch("http://localhost:8000/pyrrhic")
+    fetch("https://natespilman.tech/pyrrhic")
     .then(blob => blob.json())
     .then(data => 
         this.setState({videos:data}));
