@@ -62,9 +62,23 @@ class App extends Component {
       window:'video',
       videos:null,
       loaded:false,
+      version:'desktop'
     }
     this.updateWindow = this.updateWindow.bind(this)
     this.pages = this.pages.bind(this)
+    this.updateDimensions = this.updateDimensions.bind(this)
+  }
+
+  updateDimensions(){
+    const {version} = this.state
+    const width = window.innerWidth
+    if(width < 560 && version === 'desktop'){
+      this.setState({version:'mobile'})
+    }
+    if(width > 560 && version === 'mobile'){
+      this.setState({version:'desktop'})
+    }
+    console.log(this.state.version)
   }
 
 componentDidMount(){
@@ -74,6 +88,8 @@ componentDidMount(){
         this.setState({videos:data}));
     const thisConst = this
     setTimeout(function(){thisConst.setState({loaded:true})},3000)
+    this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions);
   }
 
   updateWindow(update){
@@ -87,7 +103,7 @@ componentDidMount(){
         <div id="App">
         <Header styleObj = {styles}/>
         <Menu updateWindow = {this.updateWindow} styleObj = {styles} window = {this.state.window}/>
-        <Vidmain styleObj = {styles} videos = {this.state.videos} selected = {this.state.videos[0]}/>
+        <Vidmain styleObj = {styles} version = {this.state.version} videos = {this.state.videos} selected = {this.state.videos[0]}/>
         </div>)
     }else{
       return(
