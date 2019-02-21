@@ -23,14 +23,14 @@
 }
 
 body{
-  background-color:purple;
+  background-color:#252E4F;
   font-family: "Noto Sans", sans-serif;
 }
 
 .selectedButton{
-  border:.2em solid white;
-  
+  border:.2em solid #FC7A3D;
 }
+.selectedButton:focus {outline:0;}
 
 .pulse{
        animation: shadow-pulse 1.5s infinite;

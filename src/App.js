@@ -40,6 +40,7 @@ const styles = {
       color:'white',
       backgroundColor:'black',
       width:'100%',
+      borderRadius:".7em"
     }
   },
   Header:{
@@ -60,6 +61,7 @@ class App extends Component {
     this.state = { 
       window:'video',
       videos:null,
+      loaded:false,
     }
     this.updateWindow = this.updateWindow.bind(this)
     this.pages = this.pages.bind(this)
@@ -70,6 +72,8 @@ componentDidMount(){
     .then(blob => blob.json())
     .then(data => 
         this.setState({videos:data}));
+    const thisConst = this
+    setTimeout(function(){thisConst.setState({loaded:true})},3000)
   }
 
   updateWindow(update){
@@ -77,7 +81,7 @@ componentDidMount(){
     console.log(update)
   }
   pages(){
-    if(this.state.videos){    
+    if(this.state.videos && this.state.loaded){    
     if(this.state.window==="video"){
       return(
         <div id="App">
