@@ -6,7 +6,6 @@
   animation-duration: 10s;
   animation-iteration-count: infinite;
   font-family: "Raleway", sans-serif;
-  height:120vh;
 }
 
 @keyframes shadow-pulse
