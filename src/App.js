@@ -29,7 +29,7 @@ const styles = {
   Vidmain:{
     Player:{
       width:"100%",
-      height:"75vh"
+      height:"75vh",
     },
     Select:{
       backgroundColor:"#FC7A3D",

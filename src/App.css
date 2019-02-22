@@ -37,7 +37,8 @@ body{
 }
 
 .button:hover {
-  background-color:#FC7A3D !important;
+  background-color:rgb(253,254,232) !important;
+  color:#252E4F !important;
 }
 
 .pulse{
