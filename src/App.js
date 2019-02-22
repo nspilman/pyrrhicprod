@@ -31,6 +31,9 @@ const styles = {
       width:"100%",
       height:"75vh"
     },
+    Select:{
+      backgroundColor:"#FC7A3D",
+    },
     Buttons:{
       display:'flex',
       flexDirection:'column',
@@ -94,7 +97,6 @@ componentDidMount(){
 
   updateWindow(update){
     this.setState({window:update})
-    console.log(update)
   }
   pages(){
     if(this.state.videos && this.state.loaded){    

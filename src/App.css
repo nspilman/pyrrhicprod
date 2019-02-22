@@ -31,6 +31,15 @@ body{
 }
 .selectedButton:focus {outline:0;}
 
+.button{
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color:#FC7A3D !important;
+}
+
 .pulse{
        animation: shadow-pulse 1.5s infinite;
   }
