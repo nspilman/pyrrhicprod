@@ -9,10 +9,10 @@ class Menu extends Component{
         <div className = "container py-4">
         <div className = "row">
         <div className = "col-sm-6 text-center text-light">
-        <Button choice = {'Watch our Videos'} styleObj = {buttonStyle} updateWindow = {updateWindow} window = {window} select={'video'}/>
+        <Button choice = {'Our Videos'} styleObj = {buttonStyle} updateWindow = {updateWindow} window = {window} select={'video'}/>
         </div>
         <div className = "col-sm-6 text-center text-light">
-        <Button choice = {'About and Contact'} styleObj = {buttonStyle} updateWindow = {updateWindow} window = {window} select = {'about'}/>
+        <Button choice = {'Contact'} styleObj = {buttonStyle} updateWindow = {updateWindow} window = {window} select = {'about'}/>
         </div>
         </div>
         </div>
