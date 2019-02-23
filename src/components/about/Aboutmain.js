@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Clock from "../../../src/img/about/alexCLock.jpg"
-import Alex from "../../../src/img/about/alexStaffLogo.jpg"
+import WGTT from "../../../src/img/about/WGTT.jpg"
+import Alex from "../../../src/img/about/alexWithCamera.jpg"
 
 class Aboutmain extends Component{
 
@@ -10,20 +10,21 @@ class Aboutmain extends Component{
             <div className = "row">
             <div className = "col-sm-6 text-center text-light">
             <h1 className = "py-3">
-                What We Do
+            Your creative vision is our priority.
             </h1>
-            <img className = "img-fluid pb-3" src = {Clock}></img>
+            <img className = "img-fluid pb-3" src = {Alex}></img>
             <p className = "pt-2">
-            Pyrrhic Productions is Jersey City, NJ's premier video production company, a part of Arts on the Hudson, Arts Nonprofit. Aside from providing quality commercial video content, we are dedicated to the cause of preserving Jersey City's art scene and creating content for budding artists to blossom. We are all artists ourselves, and are passionate about our art. Let's work together and make something great.
+            At Pyrrhic Productions we are dedicated to making eye-catching video content to spread awareness of your brand. Commercials. Instagram. Music videos. With our network of creative directors, editors, videographers and sound technicians, we are ready to bring your idea to the screen. You name it, we’ll make it.
             </p>
             </div>
             <div className = "col-sm-6 text-center text-light">
             <h1 className = "py-3">
-                Hit Us Up
+            Get a quote.
             </h1>
-            <img className = "img-fluid pb-3" src = {Alex}></img>
+            <img className = "img-fluid pb-3" src = {WGTT}></img>
             <p className = "pt-2">
-            Alex Gurevich is the Papacito Del Arte and head of Pyrrhic Productions. 
+            
+Are you a startup? A non-profit? Or a big brand? We’ve got you covered. Whether your idea is big or small, our team is ready to work to try to accommodate your budget. 
             </p>
 
             <p>Reach out at <i style={{color:"#FC7A3D"}}>Pyrrhicfilmproductions@gmail.com</i></p>
