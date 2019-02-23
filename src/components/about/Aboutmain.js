@@ -10,12 +10,12 @@ class Aboutmain extends Component{
             <div className = "row">
             <div className = "col-sm-6 text-center text-light">
             <h1 className = "py-3">
-            Your creative vision is our priority.
+            Your Creative Vision is Our Priority
             </h1>
             </div>
             <div className = "col-sm-6 text-center text-light">
             <h1 className = "py-3">
-            Get a quote.
+            Get a Quote
             </h1>
             </div>
             </div>
@@ -33,7 +33,6 @@ Are you a startup? A non-profit? Or a big brand? We’ve got you covered. Whethe
             </p>
 
             <p>Reach out at <i style={{color:"#FC7A3D"}}>Pyrrhicfilmproductions@gmail.com</i></p>
-
             </div>
             </div>
             </div>
