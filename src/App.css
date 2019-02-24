@@ -11,6 +11,14 @@
      }
 }
 
+@font-face {
+  font-family: 'Archive';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Archive'), local('Archive'),
+       url('./fonts/Archive/Archive-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
 #App {
   background-size: 100%;
   background-repeat: no-repeat;
@@ -18,7 +26,7 @@
   background-position: center;
   animation-duration: 20s;
   animation-iteration-count: infinite;
-  font-family: "Raleway", sans-serif;
+  font-family: "Archive", sans-serif;
 }
 
 @keyframes shadow-pulse
@@ -38,7 +46,6 @@
 
 body{
   background-color:#252E4F;
-  font-family: "Noto Sans", sans-serif;
 }
 
 .selectedButton{

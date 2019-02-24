@@ -6,7 +6,7 @@ class Button extends Component {
         const selected = this.props.select === this.props.window ? "button selectedButton": "button"
         return (
             <button className = {selected} style = {this.props.styleObj} onClick = {()=>{this.props.updateWindow(this.props.select)}}>
-                {this.props.choice} 
+                <b>{this.props.choice} </b>
             </button>
         )
     }

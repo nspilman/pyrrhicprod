@@ -7,6 +7,8 @@ import Menu from './components/header/Menu'
 import Aboutmain from './components/about/Aboutmain'
 import Loading from './components/loading/Loading'
 
+import archiveFont from "./fonts/Archive/Archive-Regular.ttf"
+
 const styles = {
   loading:{
     backgroundColor:'black',
@@ -28,8 +30,6 @@ const styles = {
   },
   Vidmain:{
     Player:{
-      width:"100%",
-      height:"75vh",
     },
     Select:{
       backgroundColor:"#FC7A3D",
@@ -43,7 +43,8 @@ const styles = {
       color:'white',
       backgroundColor:'black',
       width:'100%',
-      borderRadius:".7em"
+      borderRadius:".7em",
+      fontFamily:archiveFont,
     }
   },
   Header:{

@@ -7,7 +7,7 @@ class Button extends Component {
         const selected = this.props.selected === youtube_link ? "selectedButton button": "button"
         return (
             <button className = {selected} style = {this.props.styleObj.Vidmain.Button} onClick={() => {this.props.choose(youtube_link)}}>
-                {name} 
+               <b> {name}</b> 
                 <br/>by {artist}
             </button>
         )
