@@ -22,7 +22,7 @@ class Header extends Component{
                 </a>
         </div>
         <div className = 'vidProdJC col-sm-7'style = {imagesDivStyle}>
-                <img className="p-1" src={visionOnScreen} style = {imageStyle}/>     
+                <img className="p-1 img-fluid" src={visionOnScreen} style = {imageStyle}/>     
         </div>
         <div className = 'links col-sm-2 text-center mt-2' style = {socialMediaDivStyles}>
             <a href="https://www.instagram.com/pyrrhicproductions/" target="_blank">
