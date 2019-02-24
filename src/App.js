@@ -38,6 +38,9 @@ const styles = {
       display:'flex',
       flexDirection:'column',
       alignItems:'center',
+      overflowY:"scroll",
+      justifyContent:"start",
+      maxHeight:"75vh",
     },
     Button:{
       color:'white',
@@ -45,6 +48,8 @@ const styles = {
       width:'100%',
       borderRadius:".7em",
       fontFamily:archiveFont,
+      minHeight: "min-content",
+
     }
   },
   Header:{

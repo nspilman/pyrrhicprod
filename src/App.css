@@ -26,7 +26,7 @@
   background-position: center;
   animation-duration: 20s;
   animation-iteration-count: infinite;
-  font-family: "Archive", sans-serif;
+  font-family: Archive;
 }
 
 @keyframes shadow-pulse
