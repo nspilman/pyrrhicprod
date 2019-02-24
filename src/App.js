@@ -112,8 +112,8 @@ componentDidMount(){
       return(
     <div id="App">
     <Header styleObj = {styles}/>
-    <Menu updateWindow = {this.updateWindow} styleObj = {styles} window = {this.state.window}/>
-     <Aboutmain styleObj = {styles}/>
+    <Menu updateWindow = {this.updateWindow} styleObj = {styles} version = {this.state.version}/>
+     <Aboutmain styleObj = {styles} version = {this.state.version}/>
     </div>
       )
     }}

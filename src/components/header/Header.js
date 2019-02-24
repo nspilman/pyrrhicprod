@@ -9,10 +9,9 @@ class Header extends Component{
     const imagesDivStyle = this.props.styleObj.Header.images
     const socialMediaImageStyle = this.props.styleObj.SocialMediaIcons
     const socialMediaDivStyles = Object.create(imagesDivStyle)
-    // socialMediaDivStyles.display = "flex";
-    // socialMediaDivStyles.flexDirection = "column";
-    // socialMediaDivStyles.alignItems = "flex-end";
     
+    
+
     return(
         <div>
         <div id="header" className='row'>
