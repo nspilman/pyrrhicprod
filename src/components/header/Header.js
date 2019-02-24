@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import vidProdJC from "../../../src/img/header/vidProdJcNj2.png"
+import visionOnScreen from "../../../src/img/header/yourvisiononscreen.png"
 import AOTHlogo from "../../../src/img/header/logo_gmail.jpg"
 import pyrrhicLogo from "../../../src/img/header/pyrrhic_logo_white.png"
 
@@ -22,9 +22,9 @@ class Header extends Component{
                 </a>
         </div>
         <div className = 'vidProdJC col-sm-7'style = {imagesDivStyle}>
-                <img src={vidProdJC} style = {imageStyle}/>     
+                <img className="p-1" src={visionOnScreen} style = {imageStyle}/>     
         </div>
-        <div className = 'links col-sm-2 text-center' style = {socialMediaDivStyles}>
+        <div className = 'links col-sm-2 text-center mt-2' style = {socialMediaDivStyles}>
             <a href="https://www.instagram.com/pyrrhicproductions/" target="_blank">
                             <i className="fa fa-instagram fa-4x favicon-link" style = {socialMediaImageStyle} ></i>
                         </a>
