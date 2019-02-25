@@ -55,8 +55,8 @@ class Vidmain extends Component {
                 <div className = "row">
                 <div className = "col-sm-2 btn-group-vertical" 
                 style = {styleObj.Vidmain.Buttons}>
-                <p className = "text-light"> Select a Video</p>
-                <select className = "vidSelect" onChange ={this.selectChoose} style={styleObj.Vidmain.Select}>
+                <h3 className = "text-light pb-2" style={{marginTop:'5em'}}> SELECT A VIDEO</h3>
+                <select className = "vidSelect pb-3" onChange ={this.selectChoose} style={styleObj.Vidmain.Select}>
                 <Selectoptions
                 videos = {this.state.videos} 
                 choose = {this.choose} 

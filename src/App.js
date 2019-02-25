@@ -37,6 +37,7 @@ const styles = {
   },
   Vidmain:{
     Player:{
+      height:"100%"
     },
     Select:{
       backgroundColor:"rgb(253,254,232)",
@@ -63,7 +64,6 @@ const styles = {
   Header:{
     Menu:{
       mobile:{
-        marginBottom:'8em',
       }
     },
     images:{
