@@ -5,13 +5,11 @@ import pyrrhicLogo from "../../../src/img/header/pyrrhic_logo_white.png"
 
 class Header extends Component{
     render(){
-    const imageStyle = this.props.styleObj.Header.image
+    const imageStyle = this.props.version === "desktop" ? this.props.styleObj.Header.image : this.props.styleObj.Header.image.mobile
     const imagesDivStyle = this.props.styleObj.Header.images
-    const socialMediaImageStyle = this.props.styleObj.SocialMediaIcons
+    const socialMediaImageStyle = this.props.version === "desktop" ? this.props.styleObj.SocialMediaIcons : this.props.styleObj.SocialMediaIcons.mobile
     const socialMediaDivStyles = Object.create(imagesDivStyle)
     
-    
-
     return(
         <div>
         <div id="header" className='row'>

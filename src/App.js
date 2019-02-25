@@ -27,12 +27,19 @@ const styles = {
     color:'white',
     fontSize:'3em',
     marginRight:".2em",
+    mobile:{
+      width:"7vh",
+      height:"7vh",
+      color:'white',
+      fontSize:'1.5em',
+      marginRight:".2em",
+    },
   },
   Vidmain:{
     Player:{
     },
     Select:{
-      backgroundColor:"#FC7A3D",
+      backgroundColor:"rgb(253,254,232)",
     },
     Buttons:{
       display:'flex',
@@ -59,7 +66,10 @@ const styles = {
       justifyContent:'center',
     },
     image:{
-      height:"20vh"
+      height:"20vh",
+      mobile:{
+        height:"10vh"
+      }
     },
   },
 };
@@ -89,7 +99,7 @@ class App extends Component {
     }
     console.log(this.state.version)
   }
-
+  
 componentDidMount(){
     fetch("https://natespilman.tech/pyrrhic")
     .then(blob => blob.json())
@@ -109,7 +119,7 @@ componentDidMount(){
     if(this.state.window==="video"){
       return(
         <div id="App">
-        <Header styleObj = {styles}/>
+        <Header styleObj = {styles} version = {this.state.version}/>
         <Menu updateWindow = {this.updateWindow} styleObj = {styles} window = {this.state.window}/>
         <Vidmain styleObj = {styles} version = {this.state.version} videos = {this.state.videos} selected = {this.state.videos[0]}/>
         </div>)
