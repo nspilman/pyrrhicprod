@@ -9,14 +9,14 @@ class Option extends Component {
         const selected = this.props.selected === youtube_link ? true : false
         if(selected){
         return (
-            <option value = {youtube_link} selected>
-                {name} by {artist}
+            <option value = {youtube_link} selected className = "text-center">
+                 {name} by {artist}
             </option>
         )
     }
     else{
         return (
-            <option value = {youtube_link}>
+            <option value = {youtube_link} className = "text-center">
                 {name} by {artist}
             </option>
         )

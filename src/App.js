@@ -40,6 +40,7 @@ const styles = {
     },
     Select:{
       backgroundColor:"rgb(253,254,232)",
+      width:"100%"
     },
     Buttons:{
       display:'flex',
