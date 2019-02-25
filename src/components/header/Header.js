@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import visionOnScreen from "../../../src/img/header/yourvisiononscreen.png"
-import AOTHlogo from "../../../src/img/header/logo_gmail.jpg"
+import AOTHlogo from "../../../src/img/header/logo_gmail.png"
 import pyrrhicLogo from "../../../src/img/header/pyrrhic_logo_white.png"
 
 class Header extends Component{

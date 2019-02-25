@@ -61,6 +61,11 @@ const styles = {
     }
   },
   Header:{
+    Menu:{
+      mobile:{
+        marginBottom:'8em',
+      }
+    },
     images:{
       display:'flex',
       alignItems:'center',
@@ -121,7 +126,7 @@ componentDidMount(){
       return(
         <div id="App">
         <Header styleObj = {styles} version = {this.state.version}/>
-        <Menu updateWindow = {this.updateWindow} styleObj = {styles} window = {this.state.window}/>
+        <Menu updateWindow = {this.updateWindow} styleObj = {styles} window = {this.state.window} version = {this.state.version}/>
         <Vidmain styleObj = {styles} version = {this.state.version} videos = {this.state.videos} selected = {this.state.videos[0]}/>
         </div>)
     }else{

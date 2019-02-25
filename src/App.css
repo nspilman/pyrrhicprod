@@ -20,13 +20,7 @@
 }
 
 #App {
-  background-size: 100%;
-  background-repeat: no-repeat;
-  animation: background-shift;
-  background-position: center;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  font-family: Archive;
+  
 }
 
 @keyframes shadow-pulse
@@ -44,8 +38,14 @@
 
 
 
-body{
-  background-color:#252E4F;
+body{  
+  animation: background-shift;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  font-family: Archive;
 }
 
 .selectedButton{
