@@ -55,7 +55,7 @@ class Vidmain extends Component {
                 <div className = "row">
                 <div className = "col-sm-2 btn-group-vertical" 
                 style = {styleObj.Vidmain.Buttons}>
-                <h3 className = "text-light pb-2" style={{marginTop:'5em'}}> SELECT A VIDEO</h3>
+                <h3 className = "text-light pb-2" style={{marginTop:'1em'}}> SELECT A VIDEO</h3>
                 <select className = "vidSelect pb-3" onChange ={this.selectChoose} style={styleObj.Vidmain.Select}>
                 <Selectoptions
                 videos = {this.state.videos} 
@@ -65,7 +65,7 @@ class Vidmain extends Component {
                 />
                 </select>
                 </div>
-                <div className = "col-sm-10" style = {styleObj.Vidmain.Player}>
+                <div className = "col-sm-10" style = {{width:"100%",height:"45vh", background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
                 <Player video = {this.state.selected} styleObj = {styleObj} autoplay = {this.state.autoplay} />
                 </div>
             </div>  

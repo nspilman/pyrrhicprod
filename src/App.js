@@ -28,8 +28,8 @@ const styles = {
     fontSize:'3em',
     marginRight:".2em",
     mobile:{
-      width:"7vh",
-      height:"7vh",
+      width:"4vh",
+      height:"4vh",
       color:'white',
       fontSize:'1.5em',
       marginRight:".2em",
@@ -37,7 +37,7 @@ const styles = {
   },
   Vidmain:{
     Player:{
-      height:"100%"
+      minHeight:"50vh"
     },
     Select:{
       backgroundColor:"rgb(253,254,232)",
