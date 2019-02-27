@@ -12,12 +12,9 @@
 }
 
 @font-face {
-  font-family: 'Archive';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Archive'), local('Archive'),
-       url('./fonts/Archive/Archive-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
-}
+     font-family: 'Stencil';
+     src:url('./fonts/ruler_stencil/stencilLight.ttf') 
+   }
 
 #App {
   
@@ -36,7 +33,9 @@
      }
 }
 
-
+.stencilLight{
+     font-family: Stencil
+}
 
 body{  
   animation: background-shift;
@@ -45,7 +44,7 @@ body{
   background-position: center;
   animation-duration: 20s;
   animation-iteration-count: infinite;
-  font-family: Archive;
+  font-family: 'Archivo', sans-serif;
 }
 
 .selectedButton{

@@ -7,8 +7,9 @@ class Button extends Component {
         const selected = this.props.selected === youtube_link ? "selectedButton button": "button"
         return (
             <button className = {selected} style = {this.props.styleObj.Vidmain.Button} onClick={() => {this.props.choose(youtube_link)}}>
-               <b> {name.toUpperCase()}</b> 
-                <br/>by {artist}
+               {name.toUpperCase()}
+                <br/>
+                <span className = "stencilLight">by {artist}</span>
             </button>
         )
     }

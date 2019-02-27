@@ -132,7 +132,7 @@ componentDidMount(){
     }else{
       return(
     <div id="App">
-    <Header styleObj = {styles}/>
+    <Header styleObj = {styles} version = {this.state.version}/>
     <Menu updateWindow = {this.updateWindow} styleObj = {styles} version = {this.state.version}/>
      <Aboutmain styleObj = {styles} version = {this.state.version}/>
     </div>
