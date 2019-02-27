@@ -97,10 +97,10 @@ class App extends Component {
   updateDimensions(){
     const {version} = this.state
     const width = window.innerWidth
-    if(width < 560 && version === 'desktop'){
+    if(width < 600 && version === 'desktop'){
       this.setState({version:'mobile'})
     }
-    if(width > 560 && version === 'mobile'){
+    if(width > 600 && version === 'mobile'){
       this.setState({version:'desktop'})
     }
     console.log(this.state.version)
