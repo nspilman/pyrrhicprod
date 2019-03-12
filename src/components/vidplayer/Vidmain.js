@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Player from "./Player"
 import Buttons from "./Buttons"
 import Selectoptions from './Selectoptions'
+import Vidcategorymenu from "./categories/Vidcategorymenu"
 
 class Vidmain extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Vidmain extends Component {
         }
         this.choose = this.choose.bind(this)
         this.selectChoose = this.selectChoose.bind(this)
+        this.returnVidCategory = this.returnVidCategory.bind(this)
       }
 
       choose(yt){
@@ -26,18 +28,26 @@ class Vidmain extends Component {
         this.setState({selected : chosen[0],autoplay:1})
       }
 
-      componentDidMount(){
-              this.setState({videos:this.props.videos,selected:this.state.selected})
+      returnVidCategory(){
+          return this.props.videos.filter(video => video.category === this.props.menuCat)
       }
+
+      componentDidMount(){
+              this.setState({videos:this.returnVidCategory(),selected:this.returnVidCategory()[0]})
+            }
       vidsLoaded(){
+        //   console.log(this.props.videos.filter(video => video.category === this.props.menuCat))
           const {styleObj} =  this.props
           if(this.props.version === "desktop"){
             return(
+                <div>
+<div className = "container text-center">
+            <Vidcategorymenu selected = {this.props.menuCat} link = {this.props.link} />
+            </div>
             <div className = "row">
                 <div className = "col-sm-2 btn-group-vertical" 
                 style = {styleObj.Vidmain.Buttons}>
-                <Buttons 
-                className = "btn-group-vertical" 
+                <Buttons  
                 videos = {this.state.videos} 
                 choose = {this.choose} 
                 styleObj = {styleObj} 
@@ -48,10 +58,15 @@ class Vidmain extends Component {
                 <Player video = {this.state.selected} styleObj = {styleObj} autoplay = {this.state.autoplay} />
                 </div>
             </div>   
+            </div>
             )
         }
         if(this.props.version === "mobile"){
             return(
+<div>
+            <div className = "container text-center">
+            <Vidcategorymenu selected = {this.props.menuCat} link = {this.props.link} />
+            </div>
                 <div className = "row">
                 <div className = "col-sm-2 btn-group-vertical" 
                 style = {styleObj.Vidmain.Buttons}>
@@ -69,6 +84,7 @@ class Vidmain extends Component {
                 <Player video = {this.state.selected} styleObj = {styleObj} autoplay = {this.state.autoplay} />
                 </div>
             </div>  
+            </div>
             )
         }
     }

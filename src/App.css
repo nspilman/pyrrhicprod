@@ -20,6 +20,10 @@
   
 }
 
+.hideButtons{
+     display:none !important;
+}
+
 @keyframes shadow-pulse
 {
      0% {

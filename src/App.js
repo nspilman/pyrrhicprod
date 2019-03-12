@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import './App.css';
 import Vidmain from './components/vidplayer/Vidmain'
 import Header from './components/header/Header'
 import Menu from './components/header/Menu'
 import Aboutmain from './components/about/Aboutmain'
 import Loading from './components/loading/Loading'
-
+import Staffpage from "./components/staff/Staffpage"
+import pyrrhicContext from "./components/context/Context"
+import Provider from "./components/context/Provider"
 import archiveFont from "./fonts/Archive/Archive-Regular.ttf"
 
 const styles = {
@@ -111,8 +113,11 @@ componentDidMount(){
     .then(blob => blob.json())
     .then(data => 
         this.setState({videos:data}));
+      
+   
     const thisConst = this
     setTimeout(function(){thisConst.setState({loaded:true})},3000)
+    
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions);
   }
@@ -121,35 +126,39 @@ componentDidMount(){
     this.setState({window:update})
   }
   pages(){
-    if(this.state.videos && this.state.loaded){    
-    if(this.state.window==="video"){
+  
+    }
+  
+
+  render() {
+    console.log(pyrrhicContext)
+      if(this.state.videos && this.state.loaded){    
       return(
+        <Provider>
+        <Router>
         <div id="App">
-        <Header styleObj = {styles} version = {this.state.version}/>
-        <Menu updateWindow = {this.updateWindow} styleObj = {styles} window = {this.state.window} version = {this.state.version}/>
-        <Vidmain styleObj = {styles} version = {this.state.version} videos = {this.state.videos} selected = {this.state.videos[0]}/>
-        </div>)
-    }else{
-      return(
-    <div id="App">
-    <Header styleObj = {styles} version = {this.state.version}/>
-    <Menu updateWindow = {this.updateWindow} styleObj = {styles} version = {this.state.version}/>
-     <Aboutmain styleObj = {styles} version = {this.state.version}/>
-    </div>
-      )
-    }}
+        <pyrrhicContext.Consumer>
+          {context=>(
+          console.log(context)
+          )}
+        </pyrrhicContext.Consumer>
+        <Header styleObj = {styles} version = {this.state.version} link = {Link}/>
+        <Menu updateWindow = {this.updateWindow} styleObj = {styles} window = {this.state.window} version = {this.state.version} link={Link}/>
+        <Route path="/" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "reel" selected = {this.state.videos[0]} link={Link}/>}/>
+        <Route path="/musicvideos" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "music" selected = {this.state.videos[0]} link={Link}/>}/>
+        <Route path="/commercial" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "commercial" selected = {this.state.videos[0]} link={Link}/>}/>
+        <Route path="/ig" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "ig" selected = {this.state.videos[0]} link={Link}/>}/>
+        <Route path = "/contact" render={(props) => <Aboutmain {...props} styleObj = {styles} version = {this.state.version}/>}/>
+        <Route path = "/staff" component ={Staffpage}/>
+        </div>
+        </Router>
+        </Provider>)
+    }
     else{
       return(
 <Loading styleObj = {styles}/>
       )
       }
-    }
-  
-
-  render() {
-    return (
-      this.pages()
-    );
   }
 }
 

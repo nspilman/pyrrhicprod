@@ -3,12 +3,14 @@ import visionOnScreen from "../../../src/img/header/yourvisiononscreen.png"
 import AOTHlogo from "../../../src/img/header/logo_gmail.png"
 import pyrrhicLogo from "../../../src/img/header/pyrrhic_logo_white.png"
 
+
 class Header extends Component{
     render(){
     const imageStyle = this.props.version === "desktop" ? this.props.styleObj.Header.image : this.props.styleObj.Header.image.mobile
     const imagesDivStyle = this.props.styleObj.Header.images
     const socialMediaImageStyle = this.props.version === "desktop" ? this.props.styleObj.SocialMediaIcons : this.props.styleObj.SocialMediaIcons.mobile
     const socialMediaDivStyles = Object.create(imagesDivStyle)
+    const Link = this.props.link
     
     return(
         <div>
@@ -19,7 +21,19 @@ class Header extends Component{
                 </a>
         </div>
         <div className = 'vidProdJC col-sm-7'style = {imagesDivStyle}>
-                <img className="p-1 img-fluid" src={visionOnScreen} style = {imageStyle}/>     
+            <div className = "headerImgWrapper">
+                <div style = {{position:"absolute",height:"100%",width:"100%",display:"block"}}>
+                    <div style = {{paddingTop:"14vh",width:"100%", height:"100%",display:"flex"}}>
+                    <Link to="/commercial" style={{height:"100%",width:"33%", marginRight:"3%"}}>
+                    </Link>
+                    <Link to="/ig" style={{height:"100%",width:"33%",marginRight:"3%"}}>
+                    </Link>
+                    <Link to="/musicvideos" style={{height:"100%",width:"33%",marginRight:"3%"}}>
+                    </Link>
+                    </div>
+                </div>
+                    <img className="p-1 img-fluid" src={visionOnScreen} style = {imageStyle}/>     
+            </div>
         </div>
         <div className = 'links col-sm-2 text-center mt-2' style = {socialMediaDivStyles}>
             <a href="https://www.instagram.com/pyrrhicproductions/" target="_blank">
