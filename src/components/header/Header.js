@@ -16,9 +16,9 @@ class Header extends Component{
         <div>
         <div id="header" className='row'>
         <div className = 'logo col-sm-3'style = {imagesDivStyle}>
-                <a href="index.html">
+                <Link to="/">
                     <img src={pyrrhicLogo} style={imageStyle} alt="site identity" />
-                </a>
+                </Link>
         </div>
         <div className = 'vidProdJC col-sm-7'style = {imagesDivStyle}>
             <div className = "headerImgWrapper">
