@@ -105,8 +105,7 @@ class App extends Component {
     if(width > 600 && version === 'mobile'){
       this.setState({version:'desktop'})
     }
-    console.log(this.state.version)
-  }
+   }
   
 componentDidMount(){
     fetch("https://natespilman.tech/pyrrhic")
@@ -131,7 +130,6 @@ componentDidMount(){
   
 
   render() {
-    console.log(pyrrhicContext)
       if(this.state.videos && this.state.loaded){    
       return(
         <Provider>
@@ -146,8 +144,11 @@ componentDidMount(){
         <Menu updateWindow = {this.updateWindow} styleObj = {styles} window = {this.state.window} version = {this.state.version} link={Link}/>
         <Route path="/" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "reel" selected = {this.state.videos[0]} link={Link}/>}/>
         <Route path="/musicvideos" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "music" selected = {this.state.videos[0]} link={Link}/>}/>
+        <Route path="/musicvideos/:id" render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "music" selected = {this.state.videos[0]} link={Link}/>}/>
         <Route path="/commercial" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "commercial" selected = {this.state.videos[0]} link={Link}/>}/>
+        <Route path="/commercial/:id" render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "commercial" selected = {this.state.videos[0]} link={Link}/>}/>
         <Route path="/ig" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "ig" selected = {this.state.videos[0]} link={Link}/>}/>
+        <Route path="/ig/:id" render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "ig" selected = {this.state.videos[0]} link={Link}/>}/>
         <Route path = "/contact" render={(props) => <Aboutmain {...props} styleObj = {styles} version = {this.state.version}/>}/>
         <Route path = "/staff" component ={Staffpage}/>
         </div>

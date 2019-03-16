@@ -33,7 +33,20 @@ class Vidmain extends Component {
       }
 
       componentDidMount(){
-              this.setState({videos:this.returnVidCategory(),selected:this.returnVidCategory()[0]})
+          const urlParam = this.props.match.params.id
+          if(urlParam){
+            const filterSelect = this.returnVidCategory().filter(video => video.youtube_link===urlParam)
+            if(filterSelect.length > 0){
+                var selectedVid = filterSelect[0]
+            }
+            else{
+                var selectedVid = this.returnVidCategory()[0]
+            }
+          }else{
+            var selectedVid = this.returnVidCategory()[0]
+          }
+              this.setState({videos:this.returnVidCategory(),selected:selectedVid})
+              console.log(selectedVid)
             }
       vidsLoaded(){
         //   console.log(this.props.videos.filter(video => video.category === this.props.menuCat))
@@ -48,6 +61,7 @@ class Vidmain extends Component {
                 <div className = "col-sm-2 btn-group-vertical" 
                 style = {styleObj.Vidmain.Buttons}>
                 <Buttons  
+                link = {this.props.link}
                 videos = {this.state.videos} 
                 choose = {this.choose} 
                 styleObj = {styleObj} 
@@ -73,6 +87,7 @@ class Vidmain extends Component {
                 <h3 className = "text-light pb-2" style={{marginTop:'1em'}}> SELECT A VIDEO</h3>
                 <select className = "vidSelect pb-3" onChange ={this.selectChoose} style={styleObj.Vidmain.Select}>
                 <Selectoptions
+                link = {this.props.link}
                 videos = {this.state.videos} 
                 choose = {this.choose} 
                 styleObj = {styleObj} 
