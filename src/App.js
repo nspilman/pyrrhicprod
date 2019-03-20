@@ -52,12 +52,12 @@ const styles = {
       overflowY:"scroll",
       justifyContent:"start",
       maxHeight:"75vh",
-      maxWidth:'20vw',
     },
     Button:{
       color:'white',
       backgroundColor:'black',
       width:'100%',
+      // maxWidth:'20vw',
       borderRadius:".7em",
       fontFamily:archiveFont,
       minHeight: "min-content",

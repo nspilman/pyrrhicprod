@@ -71,7 +71,7 @@ class Vidmain extends Component {
                 selected = {this.state.selected.youtube_link}
                 />
                 </div>
-                <div className = "vidBox" style = {{width:"100%",height:"75vh", background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
+                <div className = "vidBox" style = {{width:"100%",height:"75vh",minWidth:'75vw',background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
                 <Player video = {this.state.selected} styleObj = {styleObj} autoplay = {this.state.autoplay} />
                 </div>
             </div>   
