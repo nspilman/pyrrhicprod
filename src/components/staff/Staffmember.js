@@ -3,15 +3,18 @@ import React, { Component } from 'react';
 import defaultPhoto from "../../../src/img/staff/davidStaffLogo.jpg"
 
 function Staffmember(props){
-    const {name, title} = props.staff
+    const {name, title, bio} = props.staff
     const photo = props.staff.photo ? props.staff.photo : defaultPhoto
 
         return (
-            <div className = "col-md-4">
-                <img className = "img-fluid" src = {photo} style = {{borderRadius:"50%", height:"40vh"}}/>
-                <div className = "text-center py-3">
+            <div className = "row py-3">
+            <div className = "col-sm-3">
+                <img className = "img-fluid" src = {photo} style = {{borderRadius:"50%", height:"30vh"}}/>
+            </div>
+                <div className = "text-center col-sm-9 text-white">
                     <h3 className= "stencilLight">{name}</h3>
                     <h5 className = "stencilLight">{title}</h5>
+                    <p className = "stencilLight">{bio}</p>
                 </div>
             </div>
         )

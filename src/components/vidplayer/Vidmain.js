@@ -11,6 +11,7 @@ class Vidmain extends Component {
             videos:null,
             selected:this.props.selected,
             autoplay:0,
+            buttonsClass : "container text-center hideButtons",
         }
         this.choose = this.choose.bind(this)
         this.selectChoose = this.selectChoose.bind(this)
@@ -34,8 +35,11 @@ class Vidmain extends Component {
 
       componentDidMount(){
           const urlParam = this.props.match.params.id
+          if(this.props.match.path !== "/"){
+            this.setState({buttonsClass:"container text-center"})
+          }
           if(urlParam){
-            const filterSelect = this.returnVidCategory().filter(video => video.youtube_link===urlParam)
+             const filterSelect = this.returnVidCategory().filter(video => video.youtube_link===urlParam)
             if(filterSelect.length > 0){
                 var selectedVid = filterSelect[0]
             }
@@ -46,7 +50,6 @@ class Vidmain extends Component {
             var selectedVid = this.returnVidCategory()[0]
           }
               this.setState({videos:this.returnVidCategory(),selected:selectedVid})
-              console.log(selectedVid)
             }
       vidsLoaded(){
         //   console.log(this.props.videos.filter(video => video.category === this.props.menuCat))
@@ -57,8 +60,8 @@ class Vidmain extends Component {
 <div className = "container text-center">
             <Vidcategorymenu selected = {this.props.menuCat} link = {this.props.link} />
             </div>
-            <div className = "row">
-                <div className = "col-sm-2 btn-group-vertical" 
+            <div className = "selectorsAndVidbox" style ={{display:'flex'}}>
+                <div className = {this.state.buttonsClass} 
                 style = {styleObj.Vidmain.Buttons}>
                 <Buttons  
                 link = {this.props.link}
@@ -68,7 +71,7 @@ class Vidmain extends Component {
                 selected = {this.state.selected.youtube_link}
                 />
                 </div>
-                <div className = "col-sm-10" style = {{width:"100%",height:"75vh", background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
+                <div className = "vidBox" style = {{width:"100%",height:"75vh", background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
                 <Player video = {this.state.selected} styleObj = {styleObj} autoplay = {this.state.autoplay} />
                 </div>
             </div>   

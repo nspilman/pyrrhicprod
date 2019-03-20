@@ -4,6 +4,9 @@ import Alex from "../../../src/img/about/alexWithCamera.jpg"
 
 class Aboutmain extends Component{
 
+    componentDidMount(){
+        this.props.updateWindow('about')
+    }
 
     renderWindow(){
         console.log('hey')

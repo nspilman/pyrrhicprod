@@ -52,6 +52,7 @@ const styles = {
       overflowY:"scroll",
       justifyContent:"start",
       maxHeight:"75vh",
+      maxWidth:'20vw',
     },
     Button:{
       color:'white',
@@ -60,7 +61,6 @@ const styles = {
       borderRadius:".7em",
       fontFamily:archiveFont,
       minHeight: "min-content",
-
     }
   },
   Header:{
@@ -149,8 +149,8 @@ componentDidMount(){
         <Route path="/commercial/:id" render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "commercial" selected = {this.state.videos[0]} link={Link}/>}/>
         <Route path="/ig" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "ig" selected = {this.state.videos[0]} link={Link}/>}/>
         <Route path="/ig/:id" render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "ig" selected = {this.state.videos[0]} link={Link}/>}/>
-        <Route path = "/contact" render={(props) => <Aboutmain {...props} styleObj = {styles} version = {this.state.version}/>}/>
-        <Route path = "/staff" component ={Staffpage}/>
+        <Route path = "/contact" render={(props) => <Aboutmain {...props} styleObj = {styles} version = {this.state.version} updateWindow = {this.updateWindow} />}/>
+        <Route path = "/staff" render={(props) => <Staffpage {...props} updateWindow = {this.updateWindow}/>}/>
         </div>
         </Router>
         </Provider>)
