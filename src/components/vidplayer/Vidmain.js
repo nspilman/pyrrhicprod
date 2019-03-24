@@ -12,7 +12,7 @@ class Vidmain extends Component {
             selected:this.props.selected,
             autoplay:0,
             buttonsClass : "container text-center hideButtons",
-        }
+            }
         this.choose = this.choose.bind(this)
         this.selectChoose = this.selectChoose.bind(this)
         this.returnVidCategory = this.returnVidCategory.bind(this)
@@ -42,7 +42,7 @@ class Vidmain extends Component {
              const filterSelect = this.returnVidCategory().filter(video => video.youtube_link===urlParam)
             if(filterSelect.length > 0){
                 var selectedVid = filterSelect[0]
-            }
+               }
             else{
                 var selectedVid = this.returnVidCategory()[0]
             }
@@ -52,6 +52,9 @@ class Vidmain extends Component {
               this.setState({videos:this.returnVidCategory(),selected:selectedVid})
             }
       vidsLoaded(){
+        window.__OG_IMAGE__ = `https://img.youtube.com/vi/${this.state.selected.youtube_link}/sddefault.jpg`
+        document.title = `${this.state.selected.name} | Video Production | Pyrrhic Productions`
+       
         //   console.log(this.props.videos.filter(video => video.category === this.props.menuCat))
           const {styleObj} =  this.props
           if(this.props.version === "desktop"){
