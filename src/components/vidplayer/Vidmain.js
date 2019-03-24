@@ -63,7 +63,8 @@ class Vidmain extends Component {
                 <div>
                     <MetaTags>
             <title>{pageTitle}</title>
-            <meta property="og:image" content={metaImage} />
+            <image>{metaImage}</image>
+            {/* <meta property="og:image" content={metaImage} /> */}
           </MetaTags>
 <div className = "container text-center">
             <Vidcategorymenu selected = {this.props.menuCat} link = {this.props.link} />
