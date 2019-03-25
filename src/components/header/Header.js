@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import visionOnScreen from "../../../src/img/header/yourvisiononscreen.png"
 import AOTHlogo from "../../../src/img/header/logo_gmail.png"
 import pyrrhicLogo from "../../../src/img/header/pyrrhic_logo_white.png"
+import pyrrhicContext from "../context/Context"
+import Provider from "../context/Provider"
 
 
 class Header extends Component{
     render(){
+        
     const imageStyle = this.props.version === "desktop" ? this.props.styleObj.Header.image : this.props.styleObj.Header.image.mobile
     const imagesDivStyle = this.props.styleObj.Header.images
     const socialMediaImageStyle = this.props.version === "desktop" ? this.props.styleObj.SocialMediaIcons : this.props.styleObj.SocialMediaIcons.mobile
@@ -13,6 +16,7 @@ class Header extends Component{
     const Link = this.props.link
     
     return(
+        
         <div>
         <div id="header" className='row'>
         <div className = 'logo col-sm-3'style = {imagesDivStyle}>
@@ -49,6 +53,8 @@ class Header extends Component{
         </div>
         </div>
         )
+
+        
 }
 }
 

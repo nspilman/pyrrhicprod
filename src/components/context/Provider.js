@@ -4,7 +4,6 @@ import archiveFont from "../../fonts/Archive/Archive-Regular.ttf"
 
 class pyrrhicProvider extends Component{
     state = {
-        testVal:"true",
         style: {
             loading:{
               backgroundColor:'black',
@@ -74,7 +73,8 @@ class pyrrhicProvider extends Component{
                 }
               },
             },
-          }
+          },
+          update:(prop) => this.prop = prop
     }
     render(){
         const state = this.state

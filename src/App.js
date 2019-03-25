@@ -133,13 +133,10 @@ componentDidMount(){
       if(this.state.videos && this.state.loaded){    
       return(
         <Provider>
+        <pyrrhicContext.Consumer>
+        {context=>(
         <Router>
         <div id="App">
-        <pyrrhicContext.Consumer>
-          {context=>(
-          console.log(context)
-          )}
-        </pyrrhicContext.Consumer>
         <Header styleObj = {styles} version = {this.state.version} link = {Link}/>
         <Menu updateWindow = {this.updateWindow} styleObj = {styles} window = {this.state.window} version = {this.state.version} link={Link}/>
         <Route path="/" exact render={(props) => <Vidmain {...props}styleObj = {styles} version = {this.state.version} videos = {this.state.videos} menuCat = "reel" selected = {this.state.videos[0]} link={Link}/>}/>
@@ -153,11 +150,16 @@ componentDidMount(){
         <Route path = "/staff" render={(props) => <Staffpage {...props} updateWindow = {this.updateWindow}/>}/>
         </div>
         </Router>
+)}
+</pyrrhicContext.Consumer>
         </Provider>)
     }
     else{
+
       return(
-<Loading styleObj = {styles}/>
+        <Router>
+        <Route path="/" render={(props) => <Loading {...props}styleObj = {styles}/>}/>
+      </Router>
       )
       }
   }
