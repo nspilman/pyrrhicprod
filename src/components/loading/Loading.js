@@ -17,7 +17,7 @@ class Loading extends Component{
     return(
         <React.Fragment>
             <MetaTags>
-            <meta property="og:image" content={metaImageUrl}/>
+            <meta property="og:image:secure_url" content={metaImageUrl}/>
             </MetaTags>
         <div style = {this.props.styleObj.loading}>
         <div className = "pulse p-3">
