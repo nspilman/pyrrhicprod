@@ -14,9 +14,7 @@ class Header extends Component{
     const socialMediaImageStyle = this.props.version === "desktop" ? this.props.styleObj.SocialMediaIcons : this.props.styleObj.SocialMediaIcons.mobile
     const socialMediaDivStyles = Object.create(imagesDivStyle)
     const Link = this.props.link
-    
-    return(
-        
+    return( 
         <div>
         <div id="header" className='row'>
         <div className = 'logo col-sm-3'style = {imagesDivStyle}>
@@ -46,9 +44,6 @@ class Header extends Component{
                         <a href="https://www.facebook.com/pyrrhicproductions" target="_blank">
                          <i className = "fa fa-facebook fa-4x favicon-link" style = {socialMediaImageStyle}></i>
                              </a>
-                        <a href="https://artsonthehudson.com" target="_blank">
-                            <img src={AOTHlogo} style = {socialMediaImageStyle}/>
-                        </a>
         </div>
         </div>
         </div>

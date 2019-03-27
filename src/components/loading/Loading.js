@@ -17,6 +17,7 @@ class Loading extends Component{
     return(
         <React.Fragment>
             <MetaTags>
+            <meta property="og:image:type" content="image/jpeg" /> 
             <meta property="og:image:secure_url" content={metaImageUrl}/>
             </MetaTags>
         <div style = {this.props.styleObj.loading}>
