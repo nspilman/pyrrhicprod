@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { pyrrhicContext } from '../../App';
+// import {pyrrhicContext} from '../../App';
 
-class Button extends Component {
-    render(){
+export default function Button(props){
         // console.log(this.props.selected)
-        const selected = this.props.select === this.props.window ? "button selectedButton": "button"
+        const selected = props.select === props.window ? "button selectedButton": "button"
         return (
-            <button className = {selected} style = {this.props.styleObj} onClick = {()=>{this.props.updateWindow(this.props.select)}}>
-                {this.props.choice}
+            <pyrrhicContext.Consumer>
+                {context =>
+            <button className = {selected}
+             style = {context.style.Vidmain.Button} 
+             onClick = {()=>{props.updateWindow(props.select)}}>
+                {props.choice}
             </button>
+                }
+            </pyrrhicContext.Consumer>
         )
     }
-}
 
-export default Button
