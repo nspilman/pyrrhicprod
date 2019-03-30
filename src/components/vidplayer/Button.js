@@ -27,9 +27,7 @@ class Button extends Component {
         return (
             <Link style = {this.props.styleObj.Vidmain.Button}  to = {routerLink}>
             <button className = {selected} style = {this.props.styleObj.Vidmain.Button} onClick={() => {this.props.choose(youtube_link)}}>
-               {name.toUpperCase()}
-                <br/>
-                <span className = "stencilLight">by {artist}</span>
+             
             </button>
             </Link>
         )

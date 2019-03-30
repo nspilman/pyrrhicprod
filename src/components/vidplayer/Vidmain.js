@@ -3,20 +3,22 @@ import Player from "./Player"
 import Buttons from "./Buttons"
 import Selectoptions from './Selectoptions'
 import Vidcategorymenu from "./categories/Vidcategorymenu"
-import {pyrrhicContext} from "../../App";
-
+import {Consumer} from "../../App";
+import PropTypes from 'prop-types';
 
 class Vidmain extends Component {
-    constructor(props) {
+    static contextType = Consumer;
+    constructor(props,context) {
         super(props);
+        console.log(context)
         this.state = { 
-            selected:this.props.selected,
+            selected:this.props.videos[0],
             autoplay:0,
             buttonsClass : "container text-center hideButtons",
             }
         this.selectChoose = this.selectChoose.bind(this)
         this.returnVidCategory = this.returnVidCategory.bind(this)
-      }
+        }
 
       choose = yt => {
           const chosen = this.state.videos.filter(video => video.youtube_link === yt)
@@ -34,6 +36,7 @@ class Vidmain extends Component {
       }
 
       componentDidMount(){
+          console.log(this.context)
           const urlParam = this.props.match.params.id
           if(this.props.match.path !== "/"){
             this.setState({buttonsClass:"container text-center"})
@@ -54,7 +57,7 @@ class Vidmain extends Component {
     
     render(){
             return(
-                <pyrrhicContext.Consumer>
+                <Consumer>
                     {context => 
                 <div>
             <div className = "container text-center">
@@ -62,7 +65,7 @@ class Vidmain extends Component {
             </div>
             <div className = "selectorsAndVidbox" style ={{display:'flex'}}>
             
-                {this.props.version === 'desktop' ? (
+                { context.version === 'desktop' ? (
                     <div className = {this.state.buttonsClass} >
                 <Buttons  
                 link = {this.props.link}
@@ -75,7 +78,7 @@ class Vidmain extends Component {
                <select className = "vidSelect pb-3" onChange ={this.selectChoose} style={context.style.Vidmain.Select}>
                <Selectoptions
                link = {this.props.link}
-               videos = {this.state.videos} 
+               videos = {context.videos} 
                choose = {this.choose} 
                selected = {this.state.selected.youtube_link}
                />
@@ -87,7 +90,7 @@ class Vidmain extends Component {
             </div> 
             </div>
         }
-        </pyrrhicContext.Consumer>
+        </Consumer>
         )
     }
 }

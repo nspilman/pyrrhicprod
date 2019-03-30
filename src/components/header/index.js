@@ -3,22 +3,22 @@ import visionOnScreen from "../../../src/img/header/yourvisiononscreen.png"
 import AOTHlogo from "../../../src/img/header/logo_gmail.png"
 import pyrrhicLogo from "../../../src/img/header/pyrrhic_logo_white.png"
 import urbanLogo from "../../../src/img/header/pyrrhicurban.png"
-import {pyrrhicContext} from "../../App";
+import {Consumer} from "../../App";
 
 
 export default function Header(props){
-    // const socialMediaImageStyle = this.props.version === "desktop" ? this.props.styleObj.SocialMediaIcons : this.props.styleObj.SocialMediaIcons.mobile
+    // const socialMediaImageStyle = this.context.version === "desktop" ? this.props.styleObj.SocialMediaIcons : this.props.styleObj.SocialMediaIcons.mobile
     const Link = props.link
     return( 
-        <pyrrhicContext.Consumer>
-        {state =>
+        <Consumer>
+        {context =>
             <div id="header" className='row'>
-                <div className = 'logo col-sm-3'style = {state.style.Header.images}>
+                <div className = 'logo col-sm-3'style = {context.style.Header.images}>
                     <Link to="/">
-                        <img src={urbanLogo} style={props.version === "desktop"? state.style.Header.image : state.style.Header.image.mobile} alt="site identity" />
+                        <img src={urbanLogo} style={context.version === "desktop"? context.style.Header.image : context.style.Header.image.mobile} alt="site identity" />
                     </Link>
                 </div>
-                <div className = 'vidProdJC col-sm-7'style = {state.style.Header.images}>
+                <div className = 'vidProdJC col-sm-7'style = {context.style.Header.images}>
                     <div className = "headerImgWrapper">
                         <div style = {{position:"absolute",height:"100%",width:"100%",display:"block"}}>
                             <div style = {{paddingTop:"14vh",width:"100%", height:"100%",display:"flex"}}>
@@ -30,22 +30,22 @@ export default function Header(props){
                                 </Link>
                             </div>
                         </div>
-                        <img className="p-1 img-fluid" src={visionOnScreen} style = {props.version === "desktop"? state.style.Header.image : state.style.Header.image.mobile}/>     
+                        <img className="p-1 img-fluid" src={visionOnScreen} style = {context.style.Header.image}/>     
                     </div>
                 </div>
-                <div className = 'links col-sm text-center mt-2' style = {props.version === "desktop" ? state.style.images : state.style.SocialMediaIcons.images.mobile}>
+                <div className = 'links col-sm text-center mt-2' style = {context.version === "desktop" ? context.style.images : context.style.images}>
                     <a href="https://www.instagram.com/pyrrhicproductions/" target="_blank">
                         <i className="fa fa-instagram fa-4x favicon-link" 
-                        style = {props.version === "desktop" ? state.style.SocialMediaIcons : state.style.SocialMediaIcons.mobile} 
+                        style = {context.version === "desktop" ? context.style.SocialMediaIcons : context.style.SocialMediaIcons.mobile} 
                         ></i>
                     </a>
                     <a href="https://www.facebook.com/pyrrhicproductions" target="_blank">
-                        <i className = "fa fa-facebook fa-4x favicon-link" style = {props.version === "desktop" ? state.style.SocialMediaIcons : state.style.SocialMediaIcons.mobile}></i>
+                        <i className = "fa fa-facebook fa-4x favicon-link" style = {context.version === "desktop" ? context.style.SocialMediaIcons : context.style.SocialMediaIcons.mobile}></i>
                     </a>
                 </div>
             </div>
             }
-      </pyrrhicContext.Consumer>
+      </Consumer>
       
         )
 

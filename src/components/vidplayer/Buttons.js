@@ -1,9 +1,9 @@
 import React from 'react';
-import {pyrrhicContext} from "../../App";
+import {Consumer} from "../../App";
 
 export default function Buttons(props) {
      return (
-     <pyrrhicContext.Consumer>
+     <Consumer>
          {context =>
      props.videos ? (props.videos.map(video => {
         const { name, artist, youtube_link, category } = video;
@@ -31,7 +31,7 @@ export default function Buttons(props) {
             <button
             className={isSelected ? 'selectedButton button' : 'button'}
             style={context.style.Vidmain.Button}
-            onClick={() => props.choose(youtube_link)}
+            onClick={() => props.choose(youtube_link)} key = {video.youtube_link}
           >
         {name.toUpperCase()}
                 <br/>
@@ -43,6 +43,6 @@ export default function Buttons(props) {
     <div/>
     )
     }
-     </pyrrhicContext.Consumer>
+     </Consumer>
      )
 }

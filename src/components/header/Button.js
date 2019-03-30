@@ -1,12 +1,12 @@
 import React from 'react';
-import { pyrrhicContext } from '../../App';
+import { Consumer } from '../../App';
 // import {pyrrhicContext} from '../../App';
 
 export default function Button(props){
         // console.log(this.props.selected)
         const selected = props.select === props.window ? "button selectedButton": "button"
         return (
-            <pyrrhicContext.Consumer>
+            <Consumer>
                 {context =>
             <button className = {selected}
              style = {context.style.Vidmain.Button} 
@@ -14,7 +14,7 @@ export default function Button(props){
                 {props.choice}
             </button>
                 }
-            </pyrrhicContext.Consumer>
+            </Consumer>
         )
     }
 

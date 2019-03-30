@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import pyrrhicLogo from "../../../src/img/header/pyrrhic_logo_white.png"
 import MetaTags from 'react-meta-tags';
-import {pyrrhicContext} from '../../App';
+import {Consumer} from '../../App';
 
 export default function Loading(props){
     const urlPath = window.location.pathname.split('/')
@@ -15,7 +15,7 @@ export default function Loading(props){
     }
     const metaImageUrl = `https://img.youtube.com/vi/${metaImage}/sddefault.jpg`
     return(
-        <pyrrhicContext.Consumer>
+        <Consumer>
             {state => 
         <React.Fragment>
             <MetaTags>
@@ -31,6 +31,6 @@ export default function Loading(props){
         </div>
         </React.Fragment>
         }
-        </pyrrhicContext.Consumer>
+        </Consumer>
         )
 }
