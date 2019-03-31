@@ -8,7 +8,7 @@ function Staffmember(props){
 
         return (
             <div className = "row py-3">
-            <div className = "col-sm-3">
+            <div className = "col-sm-3 text-center">
                 <img className = "img-fluid" src = {photo} style = {{borderRadius:"50%", height:"30vh"}}/>
             </div>
                 <div className = "text-center col-sm-9 text-white">
