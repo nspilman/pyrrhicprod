@@ -59,36 +59,42 @@ class Vidmain extends Component {
             return(
                 <Consumer>
                     {context => 
-                <div>
+                <React.Fragment>
             <div className = "container text-center">
                 <Vidcategorymenu selected = {this.props.menuCat} link = {this.props.link} />
             </div>
-            <div className = "selectorsAndVidbox" style ={{display:'flex'}}>
             
-                { context.version === 'desktop' ? (
-                    <div className = {this.state.buttonsClass} >
-                <Buttons  
-                link = {this.props.link}
-                videos = {this.state.videos} 
-                choose = {this.choose}
-                selected = {this.state.selected.youtube_link}
-                />
-                </div> )
-                 :(<div><h3 className = "text-light pb-2" style={{marginTop:'1em'}}> SELECT A VIDEO</h3>
-               <select className = "vidSelect pb-3" onChange ={this.selectChoose} style={context.style.Vidmain.Select}>
-               <Selectoptions
-               link = {this.props.link}
-               videos = {context.videos} 
-               choose = {this.choose} 
-               selected = {this.state.selected.youtube_link}
-               />
-               </select>
-               </div>)} */}
-                 <div className = "vidBox" style = {{width:"100%",height:"75vh",minWidth:'80vw',background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
-                <Player video = {this.state.selected} autoplay = {this.state.autoplay} />
-                </div>
-            </div> 
-            </div>
+                {context.version === 'desktop' ? (
+                    <div className = "selectorsAndVidbox" style ={{display:'flex'}}>
+                        <div className = {this.state.buttonsClass} >
+                            <Buttons  
+                                link = {this.props.link}
+                                videos = {this.state.videos} 
+                                choose = {this.choose}
+                                selected = {this.state.selected.youtube_link}
+                            />
+                        </div>
+                        <div className = "vidBox" style = {{width:"100%",height:"75vh",minWidth:'80vw',background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
+                            <Player video = {this.state.selected} autoplay = {this.state.autoplay} />
+                        </div>
+                    </div>
+                ):(
+                    <div className = "selectorsAndVidbox" style ={{display:'flex',flexDirection:'column'}}>
+                        <h3 className = "text-light pb-2" style={{marginTop:'1em'}}> SELECT A VIDEO</h3>
+                        <select className = "vidSelect pb-3" onChange ={this.selectChoose} style={context.style.Vidmain.Select}>
+                            <Selectoptions
+                            link = {this.props.link}
+                            videos = {this.state.videos} 
+                            choose = {this.choose} 
+                            selected = {this.state.selected.youtube_link}
+                            />
+                        </select>
+                        <div className = "vidBox" style = {{width:"100%",height:"75vh",minWidth:'80vw',background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
+                            <Player video = {this.state.selected} autoplay = {this.state.autoplay} />
+                        </div>
+                    </div>
+               )}
+        </React.Fragment>
         }
         </Consumer>
         )
