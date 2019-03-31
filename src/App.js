@@ -117,13 +117,13 @@ async componentDidMount(){
         <div id="App">
         <Header   link = {Link}/>
         <Menu updateWindow = {this.updateWindow} Link={Link}/>
-        <Route path="/" exact render={(props) => <Vidmain {...props} videos = {this.state.videos} menuCat = "reel" link={Link}/>}/>
-        <Route path="/musicvideos" exact render={(props) => <Vidmain {...props} videos = {this.state.videos} menuCat = "music" link={Link}/>}/>
-        <Route path="/musicvideos/:id" render={(props) => <Vidmain {...props} videos = {this.state.videos} menuCat = "music" link={Link}/>}/>
-        <Route path="/commercial" exact render={(props) => <Vidmain {...props} videos = {this.state.videos} menuCat = "commercial"  link={Link}/>}/>
-        <Route path="/commercial/:id" render={(props) => <Vidmain {...props} videos = {this.state.videos} menuCat = "commercial" link={Link}/>}/>
-        <Route path="/ig" exact render={(props) => <Vidmain {...props} videos = {this.state.videos} menuCat = "ig" link={Link}/>}/>
-        <Route path="/ig/:id" render={(props) => <Vidmain {...props} videos = {this.state.videos} menuCat = "ig" link={Link}/>}/>
+        <Route path="/" exact render={(props) => <Vidmain {...props} updateWindow = {this.updateWindow} videos = {this.state.videos} menuCat = "reel" link={Link}/>}/>
+        <Route path="/musicvideos" exact render={(props) => <Vidmain {...props} updateWindow = {this.updateWindow} videos = {this.state.videos} menuCat = "music" link={Link}/>}/>
+        <Route path="/musicvideos/:id" render={(props) => <Vidmain {...props} updateWindow = {this.updateWindow} videos = {this.state.videos} menuCat = "music" link={Link}/>}/>
+        <Route path="/commercial" exact render={(props) => <Vidmain {...props} updateWindow = {this.updateWindow} videos = {this.state.videos} menuCat = "commercial"  link={Link}/>}/>
+        <Route path="/commercial/:id" render={(props) => <Vidmain {...props} updateWindow = {this.updateWindow} videos = {this.state.videos} menuCat = "commercial" link={Link}/>}/>
+        <Route path="/ig" exact render={(props) => <Vidmain {...props} updateWindow = {this.updateWindow} videos = {this.state.videos} menuCat = "ig" link={Link}/>}/>
+        <Route path="/ig/:id" render={(props) => <Vidmain {...props} updateWindow = {this.updateWindow} videos = {this.state.videos} menuCat = "ig" link={Link}/>}/>
         <Route path = "/contact" render={(props) => <Aboutmain {...props} updateWindow = {this.updateWindow} />}/>
         <Route path = "/staff" render={(props) => <Staffpage {...props} updateWindow = {this.updateWindow}/>}/>
         </div>

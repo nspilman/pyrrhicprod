@@ -36,7 +36,7 @@ class Vidmain extends Component {
       }
 
       componentDidMount(){
-          console.log(this.context)
+          this.props.updateWindow('video')
           const urlParam = this.props.match.params.id
           if(this.props.match.path !== "/"){
             this.setState({buttonsClass:"container text-center"})
