@@ -10,21 +10,21 @@ export default function Menu(props){
             {context =>
         <div className = "container py-4">
             <div className = "row">
-                <div className = "col-sm-6 text-center text-light">
+                <div className = "col-sm-4 text-center text-light">
                 <Link to= "/">
                     <Button choice = {'OUR VIDEOS'}  updateWindow = {updateWindow} window = {context.window} select={'video'}/>
                 </Link>
                 </div>
-                <div className = "col-sm-6 text-center text-light">
+                <div className = "col-sm-4 text-center text-light">
                 <Link to="/contact">
                     <Button choice = {'GET IN CONTACT'}  updateWindow = {updateWindow} window = {context.window} select = {'about'}/>
                 </Link>
                 </div>
-                {/* <div className = "col-sm-4 text-center text-light"> 
+                <div className = "col-sm-4 text-center text-light"> 
                  <Link to="/staff">
-                     <Button choice = {'THE TEAM'} styleObj = {buttonStyle} updateWindow = {updateWindow} window = {window} select = {'team'}/>
+                     <Button choice = {'THE TEAM'} updateWindow = {updateWindow} window = {context.window} select = {'team'}/>
                  </Link>
-                 </div> */}
+                 </div>
             </div>
         </div>
         }
