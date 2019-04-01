@@ -17,7 +17,7 @@ const staff = [
     id:'1',
     },
     {name:'Nate Spilman',
-    title:'Web Magician',
+    title:'Web Developer',
     bio:"Nate is fascinated by the Web, and loves building things on it. Nate also enjoys music, listening and playing, and sees web development as simply another creative outlet. Nate's from Jersey City, NJ, but currently lives in Seattle.",
     photo: nateLogo,
     id:'2',
