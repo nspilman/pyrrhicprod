@@ -24,7 +24,7 @@ const staff = [
     },
     {name:'Alex Goold',
     title:'VFX and Assembly Editor',
-    bio:"",
+    bio:"Alex Goold was born and, somehow, continues to exist to this day. He comes equipped with a wide variety of media creation skills from photo editing to video effects and animation. He spends much of his time compiling footage or writing music with someone else also named Alex. When he isn’t working on creative projects he can usually be found re-reading the works of Terry Pratchett. ",
     photo: gooldLogo,
     id:'3',
     },
