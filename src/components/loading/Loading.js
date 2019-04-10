@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import pyrrhicLogo from "../../../src/img/header/pyrrhic_logo_white.png"
+import pyrrhicLogo from "../../../src/img/loading/pyrrhicLoading.jpg"
 import MetaTags from 'react-meta-tags';
 import {Consumer} from '../../App';
 
@@ -24,9 +24,10 @@ export default function Loading(props){
             </MetaTags>
         <div style = {state.style.loading}>
         <div className = "pulse p-3">
-        <img src ={pyrrhicLogo} style ={state.style.loading.logo} />
-        <br/>
-        <h4 className = 'text-light text-center'>  Loading...</h4>
+        <img src ={pyrrhicLogo} style = {{width:'100%'}}/> 
+        {/* style ={state.style.loading.logo} /> */}
+        {/* <br/> */}
+        {/* <h4 className = 'text-light text-center'>  Loading...</h4> */}
         </div>
         </div>
         </React.Fragment>

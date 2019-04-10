@@ -102,7 +102,7 @@ export default class App extends Component {
   };
   
 async componentDidMount(){
-    const res = await fetch("https://natespilman.tech/pyrrhic")
+    const res = await fetch("https://natespilman.tech/pyrrhic/")
     const data = await res.json()
     this.setState({ videos: data, loaded: true });
     this.updateDimensions();
@@ -115,7 +115,7 @@ async componentDidMount(){
         <Provider value ={this.state} >
         <Router>
         <div id="App">
-        <Header   link = {Link}/>
+        <Header link = {Link}/>
         <Menu updateWindow = {this.updateWindow} Link={Link}/>
         <Route path="/" exact render={(props) => <Vidmain {...props} updateWindow = {this.updateWindow} videos = {this.state.videos} menuCat = "reel" link={Link}/>}/>
         <Route path="/musicvideos" exact render={(props) => <Vidmain {...props} updateWindow = {this.updateWindow} videos = {this.state.videos} menuCat = "music" link={Link}/>}/>
