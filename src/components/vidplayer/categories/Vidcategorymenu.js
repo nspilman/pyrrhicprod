@@ -15,7 +15,7 @@ class Vidmain extends Component {
         return(
             <React.Fragment>
                 <div className = "container cocoMoose text-white p-3">
-                <h1 style={{letterSpacing:".4em",fontSize:'3em'}}>YOUR VISION ON SCREEN</h1>
+                <h1 style={{letterSpacing:".4em",fontSize:'3vw'}}>YOUR VISION ON SCREEN</h1>
                 </div>
             <div className = "pb-2">
                 <Link to="/musicvideos">
