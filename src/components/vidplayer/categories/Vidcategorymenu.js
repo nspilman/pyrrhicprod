@@ -13,21 +13,22 @@ class Vidmain extends Component {
     render(){
         const Link = this.props.link
         return(
+            <React.Fragment>
+                <div className = "container cocoMoose text-white p-3">
+                <h1 style={{letterSpacing:".4em",fontSize:'3em'}}>YOUR VISION ON SCREEN</h1>
+                </div>
             <div className = "pb-2">
-                <span className = "stencilLight text-white">VIDEO CATEGORY  </span>
-                <Link to="/">
-                <Button category ="Pyrrhic Reel" id = "reel" selected = {this.props.selected}/>
-                </Link>
                 <Link to="/musicvideos">
-                <Button category ="Music Videos" id = "music" selected = {this.props.selected}/>
+                    <Button category ="Music Videos" id = "music" selected = {this.props.selected}/>
                 </Link>
                 <Link to="/commercial">
-                <Button category ="Commercials" id = "commercial" selected = {this.props.selected}/>
+                    <Button category ="Commercials" id = "commercial" selected = {this.props.selected}/>
                 </Link>
                 <Link to="/ig">
-             <Button category ="Instagram Videos" id = "ig" selected = {this.props.selected}/>
-           </Link>
+                    <Button category ="Instagram Videos" id = "ig" selected = {this.props.selected}/>
+                </Link>
             </div>
+            </React.Fragment>
         )
     }
 }

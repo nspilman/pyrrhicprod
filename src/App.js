@@ -80,7 +80,7 @@ export default class App extends Component {
             justifyContent:'center',
           },
           image:{
-            height:"20vh",
+            width:"100%",
             mobile:{
               height:"10vh"
             }

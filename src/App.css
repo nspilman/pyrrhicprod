@@ -4,6 +4,19 @@
      src:url('./fonts/ruler_stencil/stencilLight.ttf') 
    }
 
+
+   @font-face {
+     font-family: 'StencilThin';
+     src:url('./fonts/ruler_stencil/Ruler\ Stencil\ Thin.ttf') 
+   }
+
+
+
+   @font-face {
+     font-family: 'Cocogoose';
+     src:url('./fonts/cocogoose/Cocogoose\ Pro\ Light-trial.ttf') 
+   }
+
 #App {
   
 }
@@ -33,6 +46,15 @@
      font-family: Stencil
 }
 
+.stencilThin{
+     font-family: StencilThin
+}
+
+
+.cocoGoose{
+     font-family: Cocogoose
+}
+
 body{  
   background:black;
   background-size: 100%;
@@ -44,14 +66,43 @@ body{
 }
 
 .selectedButton{
-  border:.2em solid #FC7A3D;
+  border:.2em solid rgb(219, 219, 219);
 }
 .selectedButton:focus {outline:0;}
+
+.selectedMenuButton{
+     border:.2em solid rgb(219, 219, 219);
+     background-color:rgb(127,127,127) !important;
+   }
+
+   .selectedMenuButton:focus {outline:0;}
+   
 
 .button{
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
 }
+
+.headerButton{
+     border:0px;
+     font-size: 1.5em;
+     cursor: pointer;
+     background-color: black;
+     color:white;
+     transition: 300ms;
+     padding:.2em;
+     margin-bottom: 1em;
+     border-radius: 25px 25px 0 0;
+}
+
+.headerButton:hover{
+     background-color:rgb(219, 219, 219);
+     color:black;
+}    
+
+.selectedHeaderButton{
+     border-bottom: 3px solid rgb(219, 219, 219);
+     }
 
 .button:hover { 
   background-color:rgb(253,254,232) !important;
