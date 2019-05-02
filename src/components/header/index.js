@@ -16,6 +16,11 @@ const Socialmedia = styled.p`
         margin-right:.2em;
     }
 `
+const StyledImageWrapper = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+`
 
 export default function Header(props){
     // const socialMediaImageStyle = this.context.version === "desktop" ? this.props.styleObj.SocialMediaIcons : this.props.styleObj.SocialMediaIcons.mobile
@@ -24,25 +29,25 @@ export default function Header(props){
         <Consumer>
         {context =>
             <div id="header" className='row'>
-                <div className = 'logo col-sm-3'style = {context.style.Header.images}>
-                    </div>
-                <div className = 'vidProdJC col-sm-7'style = {context.style.Header.images}>
-                    <div className = "headerImgWrapper">
+                <StyledImageWrapper className = 'logo col-sm-2'>
+                    </StyledImageWrapper>
+                <StyledImageWrapper className = 'vidProdJC col-sm-8'>
+                    <div className = "headerImgWrapper" style={{width:"100%"}}>
                     <Link to="/">
-                        <img src={urbanLogo} style={context.version === "desktop"? context.style.Header.image : context.style.Header.image.mobile} alt="site identity" />
+                        <img src={urbanLogo} style={{width:"100%"}} alt="site identity" />
                     </Link>
                 
                     </div>
                         {/* <img className="p-1 img-fluid" src={visionOnScreen} style = {context.style.Header.image}/>      */}
-                </div>
-                <div className = 'links col-sm text-center mt-2' style = {context.version === "desktop" ? context.style.images : context.style.images}>
+                </StyledImageWrapper>
+                <StyledImageWrapper className = 'links col-sm text-center mt-2'>
                     <a href="https://www.instagram.com/pyrrhicproductions/" target="_blank" className = "text-white">
                         <Socialmedia className = "fa fa-instagram fa-4x favicon-link"></Socialmedia>
                     </a>
                     <a href="https://www.facebook.com/pyrrhicproductions" target="_blank" className = "text-white">
                         <Socialmedia className = "fa fa-facebook fa-4x favicon-link"></Socialmedia>
                       </a>
-                </div>
+                </StyledImageWrapper>
             </div>
             }
       </Consumer>

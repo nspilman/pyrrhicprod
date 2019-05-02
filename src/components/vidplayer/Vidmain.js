@@ -4,7 +4,6 @@ import Buttons from "./Buttons"
 import Selectoptions from './Selectoptions'
 import Vidcategorymenu from "./categories/Vidcategorymenu"
 import {Consumer} from "../../App";
-import PropTypes from 'prop-types';
 
 class Vidmain extends Component {
     static contextType = Consumer;
@@ -74,14 +73,14 @@ class Vidmain extends Component {
                                 selected = {this.state.selected.youtube_link}
                             />
                         </div>
-                        <div className = "vidBox" style = {{width:"100%",height:"75vh",minWidth:'80vw',background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
+                        <div className = "vidBox" style = {{width:"100%",height:"75vh",minWidth:'70vw'}}>
                             <Player video = {this.state.selected} autoplay = {this.state.autoplay} />
                         </div>
                     </div>
                 ):(
                     <div className = "selectorsAndVidbox" style ={{display:'flex',flexDirection:'column'}}>
-                        <h3 className = "text-light pb-2" style={{marginTop:'1em'}}> SELECT A VIDEO</h3>
-                        <select className = "vidSelect pb-3" onChange ={this.selectChoose} style={context.style.Vidmain.Select}>
+                        <h4 className = "text-light pb-2 text-center" style={{marginTop:'1em'}}> SELECT A VIDEO</h4>
+                        <select className = "vidSelect pb-3" onChange ={this.selectChoose}>
                             <Selectoptions
                             link = {this.props.link}
                             videos = {this.state.videos} 

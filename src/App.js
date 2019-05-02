@@ -19,37 +19,9 @@ export default class App extends Component {
       version:'desktop',
       style:{
         Vidmain:{
-          Player:{
-            minHeight:"50vh"
-          },
           Select:{
             backgroundColor:"rgb(253,254,232)",
             width:"100%"
-          },
-          // Buttons:{
-          //   display:'flex',
-          //   flexDirection:'column',
-          //   alignItems:'center',
-          //   overflowY:"scroll",
-          //   justifyContent:"start",
-          //   maxHeight:"75vh",
-          // }
-        },
-        Header:{
-          Menu:{
-            mobile:{
-            }
-          },
-          images:{
-            display:'flex',
-            alignItems:'center',
-            justifyContent:'center',
-          },
-          image:{
-            width:"100%",
-            mobile:{
-              height:"10vh"
-            }
           },
         },
       }

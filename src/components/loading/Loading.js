@@ -4,7 +4,7 @@ import MetaTags from 'react-meta-tags';
 import {Consumer} from '../../App';
 import styled from 'styled-components';
 
-const styledLoading = styled.div`
+const StyledLoading = styled.div`
 backgroundColor:black;
 height:100vh;
 display:flex;
@@ -32,7 +32,7 @@ export default function Loading(props){
             <meta property="og:image:type" content="image/jpeg" /> 
             <meta property="og:image:secure_url" content={metaImageUrl}/>
             </MetaTags>
-        <styledLoading>
+        <StyledLoading>
             <div className = "pulse p-3">
                 <img src ={pyrrhicLogo} style = {{width:'100%'}}/> 
         {/* style ={state.style.loading.logo} /> */}
@@ -40,7 +40,7 @@ export default function Loading(props){
         
         {/* <br/> */}
         {/* <h4 className = 'text-light text-center'>  Loading...</h4> */}
-            </styledLoading>
+            </StyledLoading>
         </React.Fragment>
         }
         </Consumer>
