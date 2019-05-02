@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import pyrrhicLogo from "../../../src/img/loading/pyrrhicLoading.jpg"
 import MetaTags from 'react-meta-tags';
 import {Consumer} from '../../App';
+import styled from 'styled-components';
+
+const styledLoading = styled.div`
+backgroundColor:black;
+height:100vh;
+display:flex;
+alignItems:center;
+justifyContent:center;
+flexDirection:column;
+`
 
 export default function Loading(props){
     const urlPath = window.location.pathname.split('/')
@@ -22,14 +32,15 @@ export default function Loading(props){
             <meta property="og:image:type" content="image/jpeg" /> 
             <meta property="og:image:secure_url" content={metaImageUrl}/>
             </MetaTags>
-        <div style = {state.style.loading}>
-        <div className = "pulse p-3">
-        <img src ={pyrrhicLogo} style = {{width:'100%'}}/> 
+        <styledLoading>
+            <div className = "pulse p-3">
+                <img src ={pyrrhicLogo} style = {{width:'100%'}}/> 
         {/* style ={state.style.loading.logo} /> */}
+            </div>
+        
         {/* <br/> */}
         {/* <h4 className = 'text-light text-center'>  Loading...</h4> */}
-        </div>
-        </div>
+            </styledLoading>
         </React.Fragment>
         }
         </Consumer>

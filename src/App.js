@@ -18,31 +18,6 @@ export default class App extends Component {
       loaded:false,
       version:'desktop',
       style:{
-        loading:{
-          backgroundColor:'black',
-          height:"100vh",
-          display:'flex',
-          alignItems:'center',
-          justifyContent:'center',
-          flexDirection:'column',
-          logo:{
-            width:"70vw",
-          }
-        },
-        SocialMediaIcons:{
-          width:"7vh",
-          height:"7vh",
-          color:'white',
-          fontSize:'3em',
-          marginRight:".2em",
-          mobile:{
-            width:"4vh",
-            height:"4vh",
-            color:'white',
-            fontSize:'1.5em',
-            marginRight:".2em",
-          },
-        },
         Vidmain:{
           Player:{
             minHeight:"50vh"
@@ -51,23 +26,14 @@ export default class App extends Component {
             backgroundColor:"rgb(253,254,232)",
             width:"100%"
           },
-          Buttons:{
-            display:'flex',
-            flexDirection:'column',
-            alignItems:'center',
-            overflowY:"scroll",
-            justifyContent:"start",
-            maxHeight:"75vh",
-          },
-          Button:{
-            color:'white',
-            backgroundColor:'black',
-            width:'100%',
-            // maxWidth:'20vw',
-            borderRadius:".7em",
-            fontFamily:archiveFont,
-            minHeight: "min-content",
-          }
+          // Buttons:{
+          //   display:'flex',
+          //   flexDirection:'column',
+          //   alignItems:'center',
+          //   overflowY:"scroll",
+          //   justifyContent:"start",
+          //   maxHeight:"75vh",
+          // }
         },
         Header:{
           Menu:{

@@ -4,7 +4,18 @@ import AOTHlogo from "../../../src/img/header/logo_gmail.png"
 import pyrrhicLogo from "../../../src/img/header/pyrrhic_logo_white.png"
 import urbanLogo from "../../../src/img/header/pyrrhicurban.png"
 import {Consumer} from "../../App";
+import styled from 'styled-components';
 
+const Socialmedia = styled.p`
+    color:white;
+    font-size:3em;
+    margin-right:.2em;
+    @media (max-width: 768px){
+        color:white;
+        font-size:1.5em;
+        margin-right:.2em;
+    }
+`
 
 export default function Header(props){
     // const socialMediaImageStyle = this.context.version === "desktop" ? this.props.styleObj.SocialMediaIcons : this.props.styleObj.SocialMediaIcons.mobile
@@ -25,14 +36,12 @@ export default function Header(props){
                         {/* <img className="p-1 img-fluid" src={visionOnScreen} style = {context.style.Header.image}/>      */}
                 </div>
                 <div className = 'links col-sm text-center mt-2' style = {context.version === "desktop" ? context.style.images : context.style.images}>
-                    <a href="https://www.instagram.com/pyrrhicproductions/" target="_blank">
-                        <i className="fa fa-instagram fa-4x favicon-link" 
-                        style = {context.version === "desktop" ? context.style.SocialMediaIcons : context.style.SocialMediaIcons.mobile} 
-                        ></i>
+                    <a href="https://www.instagram.com/pyrrhicproductions/" target="_blank" className = "text-white">
+                        <Socialmedia className = "fa fa-instagram fa-4x favicon-link"></Socialmedia>
                     </a>
-                    <a href="https://www.facebook.com/pyrrhicproductions" target="_blank">
-                        <i className = "fa fa-facebook fa-4x favicon-link" style = {context.version === "desktop" ? context.style.SocialMediaIcons : context.style.SocialMediaIcons.mobile}></i>
-                    </a>
+                    <a href="https://www.facebook.com/pyrrhicproductions" target="_blank" className = "text-white">
+                        <Socialmedia className = "fa fa-facebook fa-4x favicon-link"></Socialmedia>
+                      </a>
                 </div>
             </div>
             }

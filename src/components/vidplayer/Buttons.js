@@ -1,5 +1,15 @@
 import React from 'react';
 import {Consumer} from "../../App";
+import styled from 'styled-components';
+
+
+const StyledButton = styled.button`
+  color:white;
+background-color:black;
+width:100%;
+// maxWidth:20vw;
+border-radius:.7em;
+`
 
 export default function Buttons(props) {
      return (
@@ -28,15 +38,14 @@ export default function Buttons(props) {
 
         return(
             <Link to = {routerLink}>
-            <button
+            <StyledButton
             className={isSelected ? 'selectedButton button' : 'button'}
-            style={context.style.Vidmain.Button}
             onClick={() => props.choose(youtube_link)} key = {video.youtube_link}
           >
         {name.toUpperCase()}
                 <br/>
                 <span className = "stencilLight">by {artist}</span>
-          </button>
+          </StyledButton>
           </Link>
         )
      })):(
