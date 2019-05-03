@@ -100,7 +100,7 @@ class Vidmain extends Component {
                             </ButtonsWrapper>
                             <this.MobileSelect>
                                 <h4 className = "text-light pb-2 text-center mt-1"> SELECT A VIDEO</h4>
-                                <select className = "pb-3" onChange ={this.selectChoose}>
+                                <select className = " vidSelect pb-3 bg-light" onChange ={this.selectChoose}>
                                     <Selectoptions
                                         link = {this.props.link}
                                         videos = {this.state.videos} 

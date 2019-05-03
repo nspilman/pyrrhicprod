@@ -20,10 +20,10 @@ export default function Buttons(props) {
 
         const videoUrls = {'music': `/musicvideos/${youtube_link}`,"ig":`/ig/${youtube_link}`,'commercial':`/commercial/${youtube_link}`,'reel':"/"}
         return(
-            <Link to = {videoUrls[category]}>
+            <Link to = {videoUrls[category]} key = {youtube_link}>
             <StyledButton
             className={isSelected ? 'selectedButton button' : 'button'}
-            onClick={() => props.choose(youtube_link)} key = {video.youtube_link}
+            onClick={() => props.choose(youtube_link)} 
           >
         {name.toUpperCase()}
                 <br/>
