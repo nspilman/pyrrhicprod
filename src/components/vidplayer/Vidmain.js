@@ -7,9 +7,8 @@ import {Consumer} from "../../App";
 
 class Vidmain extends Component {
     static contextType = Consumer;
-    constructor(props,context) {
+    constructor(props) {
         super(props);
-        console.log(context)
         this.state = { 
             selected:this.props.videos[0],
             autoplay:0,
@@ -55,6 +54,7 @@ class Vidmain extends Component {
             }
     
     render(){
+        const mobileDisplay = this.props.menuCat == "reel" ? 'none':'flex'
             return(
                 <Consumer>
                     {context => 
@@ -79,6 +79,7 @@ class Vidmain extends Component {
                     </div>
                 ):(
                     <div className = "selectorsAndVidbox" style ={{display:'flex',flexDirection:'column'}}>
+                        <div style = {{display:mobileDisplay, flexDirection:'column'}}>
                         <h4 className = "text-light pb-2 text-center" style={{marginTop:'1em'}}> SELECT A VIDEO</h4>
                         <select className = "vidSelect pb-3" onChange ={this.selectChoose}>
                             <Selectoptions
@@ -88,6 +89,7 @@ class Vidmain extends Component {
                             selected = {this.state.selected.youtube_link}
                             />
                         </select>
+                        </div>
                         <div className = "vidBox" style = {{width:"100%",height:"75vh",minWidth:'80vw',background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
                             <Player video = {this.state.selected} autoplay = {this.state.autoplay} />
                         </div>
