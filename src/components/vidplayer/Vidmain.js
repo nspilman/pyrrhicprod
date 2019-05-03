@@ -4,6 +4,26 @@ import Buttons from "./Buttons"
 import Selectoptions from './Selectoptions'
 import Vidcategorymenu from "./categories/Vidcategorymenu"
 import {Consumer} from "../../App";
+import styled from 'styled-components';
+
+const SelectorAndVidBox = styled.div`
+display:flex;
+@media (max-width: 768px){
+    flex-direction:column;
+}
+`
+
+const ButtonsWrapper = styled.div`
+@media (max-width: 768px){
+    display:none;
+}
+`
+
+const VidWrapper = styled.div`
+width:100%;
+height:75vh;
+min-width:70vw;
+`
 
 class Vidmain extends Component {
     static contextType = Consumer;
@@ -17,6 +37,18 @@ class Vidmain extends Component {
         this.selectChoose = this.selectChoose.bind(this)
         this.returnVidCategory = this.returnVidCategory.bind(this)
         }
+
+        showSelect = this.props.menuCat === 'reel' ? 'none':'flex';
+
+        MobileSelect = styled.div`
+        @media(min-width:769px){
+            display:none;
+        };
+        @media (max-width: 768px){
+            display:${this.showSelect};
+            flex-direction:column;
+        }
+`
 
       choose = yt => {
           const chosen = this.state.videos.filter(video => video.youtube_link === yt)
@@ -33,68 +65,54 @@ class Vidmain extends Component {
           return this.props.videos.filter(video => video.category === this.props.menuCat)
       }
 
+      returnVidByUrl(url){
+          return this.returnVidCategory().filter(video => video.youtube_link===url);
+      }
+
       componentDidMount(){
           this.props.updateWindow('video')
-          const urlParam = this.props.match.params.id
           if(this.props.match.path !== "/"){
             this.setState({buttonsClass:"container text-center"})
           }
-          if(urlParam){
-             const filterSelect = this.returnVidCategory().filter(video => video.youtube_link===urlParam)
-            if(filterSelect.length > 0){
-                var selectedVid = filterSelect[0]
-               }
-            else{
-                var selectedVid = this.returnVidCategory()[0]
-            }
-          }else{
-            var selectedVid = this.returnVidCategory()[0]
-          }
-              this.setState({videos:this.returnVidCategory(),selected:selectedVid})
+            const url = this.props.match.params.id
+            const videosByUrl = this.returnVidByUrl(url)
+            const selectedVid = videosByUrl.length > 0 ? videosByUrl[0] : this.returnVidCategory()[0]
+            this.setState({videos:this.returnVidCategory(),selected:selectedVid})
             }
     
     render(){
-        const mobileDisplay = this.props.menuCat == "reel" ? 'none':'flex'
+        console.log(this.MobileSelect)
             return(
                 <Consumer>
                     {context => 
-                <React.Fragment>
-            <div className = "container text-center">
-                <Vidcategorymenu selected = {this.props.menuCat} link = {this.props.link} />
-            </div>
-            
-                {context.version === 'desktop' ? (
-                    <div className = "selectorsAndVidbox" style ={{display:'flex'}}>
-                        <div className = {this.state.buttonsClass} >
-                            <Buttons  
-                                link = {this.props.link}
-                                videos = {this.state.videos} 
-                                choose = {this.choose}
-                                selected = {this.state.selected.youtube_link}
-                            />
+                    <React.Fragment>
+                        <div className = "container text-center">
+                            <Vidcategorymenu selected = {this.props.menuCat} link = {this.props.link} />
                         </div>
-                        <div className = "vidBox" style = {{width:"100%",height:"75vh",minWidth:'70vw'}}>
-                            <Player video = {this.state.selected} autoplay = {this.state.autoplay} />
-                        </div>
-                    </div>
-                ):(
-                    <div className = "selectorsAndVidbox" style ={{display:'flex',flexDirection:'column'}}>
-                        <div style = {{display:mobileDisplay, flexDirection:'column'}}>
-                        <h4 className = "text-light pb-2 text-center" style={{marginTop:'1em'}}> SELECT A VIDEO</h4>
-                        <select className = "vidSelect pb-3" onChange ={this.selectChoose}>
-                            <Selectoptions
-                            link = {this.props.link}
-                            videos = {this.state.videos} 
-                            choose = {this.choose} 
-                            selected = {this.state.selected.youtube_link}
-                            />
-                        </select>
-                        </div>
-                        <div className = "vidBox" style = {{width:"100%",height:"75vh",minWidth:'80vw',background:`url:https://img.youtube.com/vi/${this.state.selected.youtube_link}/hqdefault.jpg`}}>
-                            <Player video = {this.state.selected} autoplay = {this.state.autoplay} />
-                        </div>
-                    </div>
-               )}
+                        <SelectorAndVidBox >
+                            <ButtonsWrapper className = {this.state.buttonsClass} >
+                                <Buttons  
+                                    link = {this.props.link}
+                                    videos = {this.state.videos} 
+                                    choose = {this.choose}
+                                    selected = {this.state.selected.youtube_link}
+                                    />
+                            </ButtonsWrapper>
+                            <this.MobileSelect>
+                                <h4 className = "text-light pb-2 text-center mt-1"> SELECT A VIDEO</h4>
+                                <select className = "pb-3" onChange ={this.selectChoose}>
+                                    <Selectoptions
+                                        link = {this.props.link}
+                                        videos = {this.state.videos} 
+                                        choose = {this.choose} 
+                                        selected = {this.state.selected.youtube_link}
+                                    />
+                                </select>
+                            </this.MobileSelect>
+                            <VidWrapper>
+                                <Player video = {this.state.selected} autoplay = {this.state.autoplay} />
+                            </VidWrapper>
+                    </SelectorAndVidBox>
         </React.Fragment>
         }
         </Consumer>

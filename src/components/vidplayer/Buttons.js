@@ -6,7 +6,6 @@ const StyledButton = styled.button`
   color:white;
 background-color:black;
 width:100%;
-// maxWidth:20vw;
 border-radius:.7em;
 `
 
