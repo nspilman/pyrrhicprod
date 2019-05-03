@@ -19,7 +19,12 @@
 
 #App {
      padding:0 5em;
-  
+}
+
+@media (max-width: 768px){
+     #App{
+     padding:0;
+ }
 }
 
 .hideButtons{

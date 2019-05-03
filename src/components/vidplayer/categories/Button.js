@@ -13,6 +13,9 @@ transition: 350ms;
 padding:.2em;
 margin-bottom: 1em;
 border-radius: 25px 25px 0 0;
+@media (max-width: 768px){
+    font-size:4vw;
+}
 :hover{
     background-color:rgb(219, 219, 219);
     color:black;
