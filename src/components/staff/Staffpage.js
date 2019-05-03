@@ -64,7 +64,6 @@ class Staffpage extends Component {
             <div className = "container">
             <span className = "text-center text-white mb-5"><h1>OUR STAFF</h1></span>
             {staff.map(person =>{
-                console.log(person)
                 return <Staffmember staff ={person} key={person.id}/>
             })}
             </div>

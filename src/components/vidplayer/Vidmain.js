@@ -81,7 +81,6 @@ class Vidmain extends Component {
             }
     
     render(){
-        console.log(this.MobileSelect)
             return(
                 <Consumer>
                     {context => 

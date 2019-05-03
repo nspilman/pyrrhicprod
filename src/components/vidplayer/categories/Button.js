@@ -30,17 +30,13 @@ class Button extends Component {
     render(){
         // console.log(this.props.selected)
         const {category, id, selected} = this.props
-        if(selected === id){
-            return (
+        return selected === id ?
+             (
                 <StyledSelectedButton className = "px-3">
-                {/* style = {this.props.styleObj.Vidmain.Button}> */}
                   {category}
                </StyledSelectedButton>
-            )
-        }
-        return (
+            ):(
             <StyledButton className = "px-3">
-             {/* style = {this.props.styleObj.Vidmain.Button}> */}
                {category}
             </StyledButton>
         )
