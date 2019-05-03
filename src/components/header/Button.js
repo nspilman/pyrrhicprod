@@ -1,5 +1,4 @@
 import React from 'react';
-import { Consumer } from '../../App';
 // import {pyrrhicContext} from '../../App';
 import styled from 'styled-components';
 
@@ -15,15 +14,11 @@ export default function Button(props){
         // console.log(this.props.selected)
         const selected = props.select === props.window ? "button selectedMenuButton": "button"
         return (
-            <Consumer>
-                {context =>
             <StyledButton className = {selected}
             //  style = {context.style.Vidmain.Button} 
              onClick = {()=>{props.updateWindow(props.select)}}>
                 {props.choice} 
             </StyledButton>
-                }
-            </Consumer>
         )
     }
 
