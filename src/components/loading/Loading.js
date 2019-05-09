@@ -17,9 +17,10 @@ flex-direction:column;
 export default function Loading(props){
     return(
         <StyledLoading>
-        <video width="80%" height="auto" autoPlay>
+            <img src = {pyrrhicLogo} style ={{width:"100%"}}></img>
+        {/* <video width="80%" height="auto" autoPlay>
             <source src="https://github.com/nspilman/pyrrhicprod/blob/master/src/video/loading/loading_screen_video.mp4?raw=true" type="video/mp4"/>
-        </video>
+        </video> */}
             </StyledLoading>
         )
 }

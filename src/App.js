@@ -43,7 +43,7 @@ async componentDidMount(){
     const res = await fetch("https://natespilman.tech/pyrrhic/")
     const data = await res.json()
     this.setState({videos: data})
-    setTimeout(()=>{this.setState({loaded:true})},10500);
+    setTimeout(()=>{this.setState({loaded:true})},2000);
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions);
   }
