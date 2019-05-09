@@ -42,7 +42,8 @@ export default class App extends Component {
 async componentDidMount(){
     const res = await fetch("https://natespilman.tech/pyrrhic/")
     const data = await res.json()
-    this.setState({ videos: data, loaded: true });
+    this.setState({videos: data})
+    setTimeout(()=>{this.setState({loaded:true})},10500);
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions);
   }
