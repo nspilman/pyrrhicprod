@@ -18,7 +18,7 @@ export default function Loading(props){
     return(
         <StyledLoading>
         <video width="80%" height="auto" autoPlay>
-            <source src={loadingscreenVideo} type="video/mp4"/>
+            <source src="https://github.com/nspilman/pyrrhicprod/blob/master/src/video/loading/loading_screen_video.mp4?raw=true" type="video/mp4"/>
         </video>
             </StyledLoading>
         )
