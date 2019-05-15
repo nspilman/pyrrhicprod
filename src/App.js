@@ -40,14 +40,20 @@ export default class App extends Component {
   };
   
 async componentDidMount(){
-    const res = await fetch("https://natespilman.tech/pyrrhic/")
-    const data = await res.json()
+  let data;
+  try{
+    const res = await fetch("https://natespilman.tech/pyrrhic/").catch(error => console.log(error))
+    data = await res.json().catch(error => console.log(error))
     this.setState({videos: data})
-    setTimeout(()=>{this.setState({loaded:true})},2000);
+  }
+  catch(error){
+    console.log(error)
+    this.setState({videos:null})
+  }
+    setTimeout(()=>{this.setState({loaded:true})},1000);
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions);
   }
-
   
   render() {
       return this.state.loaded  ? (

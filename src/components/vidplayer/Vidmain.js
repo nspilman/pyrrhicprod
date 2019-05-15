@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Player from "./Player"
 import Buttons from "./Buttons"
 import Selectoptions from './Selectoptions'
+import Offline from "./Offline"
 import Vidcategorymenu from "./categories/Vidcategorymenu"
 import {Consumer} from "../../App";
 import styled from 'styled-components';
@@ -30,12 +31,12 @@ class Vidmain extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            selected:this.props.videos[0],
+            selected:null,
             autoplay:0,
             buttonsClass : "container text-center hideButtons",
             }
-        this.selectChoose = this.selectChoose.bind(this)
-        this.returnVidCategory = this.returnVidCategory.bind(this)
+        // this.selectChoose = this.selectChoose.bind(this)
+        // this.returnVidCategory = this.returnVidCategory.bind(this)
         }
 
         showSelect = this.props.menuCat === 'reel' ? 'none':'flex';
@@ -55,13 +56,13 @@ class Vidmain extends Component {
           this.setState({selected : chosen[0],autoplay:1})
       }
 
-      selectChoose(){
-        const selectVal = document.querySelector('.vidSelect').value
-        const chosen = this.state.videos.filter(video => video.youtube_link === selectVal)
-        this.setState({selected : chosen[0],autoplay:1})
-      }
+    //   selectChoose(){
+        // const selectVal = document.querySelector('.vidSelect').value
+        // const chosen = this.state.videos.filter(video => video.youtube_link === selectVal)
+        // this.setState({selected : chosen[0],autoplay:1})
+    //   }
 
-      returnVidCategory(){
+      returnVidCategory = () =>{
           return this.props.videos.filter(video => video.category === this.props.menuCat)
       }
 
@@ -71,17 +72,19 @@ class Vidmain extends Component {
 
       componentDidMount(){
           this.props.updateWindow('video')
-          if(this.props.match.path !== "/"){
-            this.setState({buttonsClass:"container text-center"})
-          }
-            const url = this.props.match.params.id
-            const videosByUrl = this.returnVidByUrl(url)
-            const selectedVid = videosByUrl.length > 0 ? videosByUrl[0] : this.returnVidCategory()[0]
-            this.setState({videos:this.returnVidCategory(),selected:selectedVid})
+          if(this.props.videos){
+            if(this.props.match.path !== "/"){
+                this.setState({buttonsClass:"container text-center"})
+              }
+                const url = this.props.match.params.id
+                const videosByUrl = this.returnVidByUrl(url)
+                const selectedVid = videosByUrl.length > 0 ? videosByUrl[0] : this.returnVidCategory()[0]
+                this.setState({videos:this.returnVidCategory(),selected:selectedVid})
+                }
             }
     
     render(){
-            return(
+            return this.props.videos ? (
                 <Consumer>
                     {context => 
                     <React.Fragment>
@@ -94,28 +97,32 @@ class Vidmain extends Component {
                                     link = {this.props.link}
                                     videos = {this.state.videos} 
                                     choose = {this.choose}
-                                    selected = {this.state.selected.youtube_link}
+                                    selected = {this.state.selected ? this.state.selected.youtube_link : ''}
                                     />
                             </ButtonsWrapper>
                             <this.MobileSelect>
                                 <h4 className = "text-light pb-2 text-center mt-1"> SELECT A VIDEO</h4>
-                                <select className = " vidSelect pb-3 bg-light" onChange ={this.selectChoose}>
+                                <select className = " vidSelect pb-3 bg-light" onChange ={this.choose}>
                                     <Selectoptions
                                         link = {this.props.link}
                                         videos = {this.state.videos} 
                                         choose = {this.choose} 
-                                        selected = {this.state.selected.youtube_link}
+                                        selected = {this.state.selected ? this.state.selected.youtube_link : ''}
                                     />
                                 </select>
                             </this.MobileSelect>
                             <VidWrapper>
-                                <Player video = {this.state.selected} autoplay = {this.state.autoplay} />
+                                {
+                                    this.state.selected ?
+                                <Player video = {this.state.selected} autoplay = {this.state.autoplay} /> :
+                                <div/>
+                                }
                             </VidWrapper>
                     </SelectorAndVidBox>
         </React.Fragment>
         }
         </Consumer>
-        )
+        ):( <Offline/>)
     }
 }
 
